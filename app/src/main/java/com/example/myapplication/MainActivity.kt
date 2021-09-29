@@ -8,14 +8,18 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val Jeon = Person("BIGJEON", 25)
+        val Jeon = Person("BIGJEON1", 25)
 
-        val HeeTae = Jeon.copy(Name = "HeeTae")
-
-        val Programmenr = Jeon.let {
+        with(Jeon){
+            println(Name)
+        }
+        /*val Programmer = Jeon.let {
             it.Name = "Me"
             it.Age = 5
-        }
+            it
+        }*/
+
+
         val Change = Jeon.apply {
             this.Name = "Jeon"
             this.Age = 26
@@ -34,6 +38,6 @@ class MainActivity : AppCompatActivity() {
             val Age = 12
             Person(Name, Age)
         }
-        println("${RunCheck.Name}")
+        //println("${Programmer}")
     }
 }
